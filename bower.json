@@ -1,0 +1,19 @@
+{
+  "name": "fussstats",
+  "version": "0.0.0",
+  "authors": [
+    "Stefan Loeschcke <stefan@c3a.dk>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass-official": "~3.3.3",
+    "font-awesome": "~4.3.0"
+  }
+}

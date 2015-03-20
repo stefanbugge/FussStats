@@ -1,0 +1,14 @@
+$bgColor: #FF851B;
+$mainColor: white;
+
+html, body, .bgColor {
+  background-color: $bgColor;
+}
+
+.test {
+  color: blue;
+
+  .omg {
+    background-color: $mainColor;
+  }
+}
