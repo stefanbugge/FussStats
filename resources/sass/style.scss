@@ -1,12 +1,12 @@
 $bgColor: #FF851B;
-$mainColor: white;
+$mainColor: yellow;
 
 html, body, .bgColor {
   background-color: $bgColor;
 }
 
 .test {
-  color: blue;
+  color: purple;
 
   .omg {
     background-color: $mainColor;

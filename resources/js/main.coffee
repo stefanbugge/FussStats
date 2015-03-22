@@ -10,19 +10,43 @@ client = new Keen(
 #  requestType: "jsonp"            # String (optional: jsonp, xhr, beacon)
 )
 
-purchaseEvent =
-  item: 'golden gadget'
-  price: 60.50
-  referrer: document.referrer
-  keen: timestamp: (new Date).toISOString()
+#purchaseEvent =
+#  item: 'golden gadget'
+#  price: 60.50
+#  referrer: document.referrer
+#  keen: timestamp: (new Date).toISOString()
+#
+## Send it to the "purchases" collection
+#client.addEvent 'purchases', purchaseEvent, (err, res) ->
+#  console.debug res
+#  if err
+#    # there was an error!
+#  else
+#    # see sample response below
+#  return
 
-# Send it to the "purchases" collection
-client.addEvent 'purchases', purchaseEvent, (err, res) ->
-  console.debug res
-  if err
-    # there was an error!
-  else
-    # see sample response below
-  return
+app = require './app'
+console.debug 'app', app
 
+count = new (Keen.Query)('count', eventCollection: 'purchases')
+client.draw count, document.getElementById('count-pageviews-metric'),
+  chartType: 'metric'
+  title: 'Total Pageviews'
+  colors: [ '#49c5b1' ]
 
+visitor_origins = new (Keen.Query)('count',
+  eventCollection: 'purchases'
+  groupBy: 'price')
+client.draw visitor_origins, document.getElementById('count-pageviews-piechart'),
+  chartType: 'piechart'
+  title: 'Visitor Referrers'
+
+total_pageviews = new (Keen.Query)('count',
+  eventCollection: 'purchases'
+  groupBy: 'price'
+  timeframe: 'this_3_days'
+  interval: 'daily')
+
+client.draw total_pageviews, document.getElementById('total-daily-revenue-linechart'),
+  chartType: 'linechart'
+  title: 'Daily revenue (7 days)'
