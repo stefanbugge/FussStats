@@ -1,7 +1,7 @@
 # FussStats
 
 Fußball statistics for the company.
-
+Look at me! Im Contributing! -rt
 Using:
 
 * Keen.io - custom statistics
