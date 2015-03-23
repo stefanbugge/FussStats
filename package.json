@@ -38,6 +38,7 @@
     "method-override": "^2.3.2",
     "minimatch": "^2.0.4",
     "mongoose": "^3.8.25",
+    "mongoose-auto-increment": "^3.2.0",
     "passport": "^0.2.1",
     "passport-google": "^0.3.0",
     "passport-google-oauth": "^0.2.0",
