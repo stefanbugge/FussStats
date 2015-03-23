@@ -8,3 +8,7 @@ Using:
 * Node - simple backend
 * Mongodb - simple user table
 * User registration with OAuth and Google accounts
+* React
+* CoffeeScript
+* Sass
+* FontAwesome
